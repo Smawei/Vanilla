@@ -11,4 +11,11 @@ from django.http import HttpResponse
     2.必须返回一个响应
 """
 def index(request):
-    return HttpResponse('ok!')
+    context = {
+        'name': '测试数据',
+    }
+    # render 三个参数
+    # 请求对象
+    # 模板的名字
+    # 传入的数据
+    return render(request, 'book/index.html', context=context)
